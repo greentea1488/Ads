@@ -1,0 +1,41 @@
+﻿<Window x:Class="Ads.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ads"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid Width="50" HorizontalAlignment="Left" Background="DeepPink">
+            <Grid.Style>
+                <Style TargetType="{x:Type Grid}">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent ="MouseEnter">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration ="0:0:0.2 " Storyboard.TargetProperty="Width" To="200"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent ="MouseLeave">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Duration ="0:0:0.2 " Storyboard.TargetProperty="Width" To="50"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+        </Grid>
+        <Button Background="DeepPink" Width="155" Height="45" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="372,176,365,218" Click="Button_Click">
+            <TextBlock Text=" Click it!" Foreground="White"></TextBlock>
+        </Button>
+
+    </Grid>
+</Window>
